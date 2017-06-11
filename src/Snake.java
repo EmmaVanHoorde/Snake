@@ -70,6 +70,8 @@ public class Snake {
 
     protected void move(){
 
+        Start.setStage(play);
+
         if (direction == left && thisDirection == right) {
             direction = right;
         }
@@ -91,7 +93,9 @@ public class Snake {
         Case newCase = new Case(firstCase.x + direction.getX(), firstCase.y + direction.getY());
 
 
-        if (firstX >= 10 || firstY < 0 || firstX < 0 || firstY >= 10) {
+        //if (firstX > 10 || firstY < 0 || firstX < 0 || firstY > 10)
+            if (firstX > 10 || firstY < 0 || firstX < 0 || firstY > 10)
+        {
             Start.setStage(gameOver);
             return;
         }

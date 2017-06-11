@@ -17,6 +17,9 @@ public class Start {
     static JFrame window;
     static Display display;
 
+    public static boolean level;
+
+
 
     public static JFrame createWindow() {
         window = new JFrame();
@@ -53,14 +56,26 @@ public class Start {
 
     }
 
+
+
     public static void newGame() {
-        
+
+//        Level level = new Level();
+//        boolean test = level.getLevel();
+
         Repeat time = new Repeat(game, display);
 
         stage = play;
         setStage(play);
         game.newGame();
-        time.snakeTimer();
+
+
+        if (level == false){
+            time.timerLevelOne();
+        }
+        else if (level == true){
+            time.timerLevelTwo();
+        }
     }
 
     public static String getHome(){
@@ -82,5 +97,13 @@ public class Start {
 
     public static void setStage(String stage) {
         Start.stage = stage;
+    }
+
+    public static boolean getLevel(){
+        return level;
+    }
+
+    public static void setLevel(boolean level) {
+        Start.level = level;
     }
 }
