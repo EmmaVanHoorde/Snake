@@ -93,8 +93,7 @@ public class Snake {
         Case newCase = new Case(firstCase.x + direction.getX(), firstCase.y + direction.getY());
 
 
-        //if (firstX > 10 || firstY < 0 || firstX < 0 || firstY > 10)
-            if (firstX > 10 || firstY < 0 || firstX < 0 || firstY > 10)
+        if (firstX > 16 || firstY < 0 || firstX < 0 || firstY > 16)
         {
             Start.setStage(gameOver);
             return;

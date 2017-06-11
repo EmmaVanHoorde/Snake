@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 
 public class Start {
@@ -18,7 +19,6 @@ public class Start {
     static Display display;
 
     public static boolean level;
-
 
 
     public static JFrame createWindow() {
@@ -46,7 +46,6 @@ public class Start {
         game = new Game();
         snake = new Snake();
         Food food = new Food();
-        setStage(play);
         game.addSnake(snake);
         game.addfood(food);
 
@@ -57,16 +56,11 @@ public class Start {
     }
 
 
-
     public static void newGame() {
-
-//        Level level = new Level();
-//        boolean test = level.getLevel();
 
         Repeat time = new Repeat(game, display);
 
         stage = play;
-        setStage(play);
         game.newGame();
 
 
@@ -99,9 +93,7 @@ public class Start {
         Start.stage = stage;
     }
 
-    public static boolean getLevel(){
-        return level;
-    }
+    public static boolean getLevel(){ return level; }
 
     public static void setLevel(boolean level) {
         Start.level = level;

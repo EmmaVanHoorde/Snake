@@ -13,7 +13,6 @@ public class Window extends JFrame{
 
     public Window(){
         Start start = new Start();
-        //Level speed = new Level();
 
         this.setTitle("Snake");
         this.setSize(600, 400);
@@ -23,6 +22,9 @@ public class Window extends JFrame{
         JButton buttonPlay = new JButton("niveau 1");
         JButton buttonPlay2 = new JButton("niveau 2");
         JButton buttonLeave = new JButton("Quitter");
+        buttonPlay.setPreferredSize(new Dimension(100, 30));
+        buttonPlay2.setPreferredSize(new Dimension(100, 30));
+        buttonLeave.setPreferredSize(new Dimension(100, 30));
 
         this.setLayout(new FlowLayout());
         this.add(buttonPlay);
@@ -35,7 +37,6 @@ public class Window extends JFrame{
             public void actionPerformed(ActionEvent event) {
 
                 start.setLevel(false);
-
                 start.startGame();
                 start.createWindow();
                 start.newGame();
@@ -46,7 +47,6 @@ public class Window extends JFrame{
             public void actionPerformed(ActionEvent event) {
 
                 start.setLevel(true);
-
                 start.startGame();
                 start.createWindow();
                 start.newGame();

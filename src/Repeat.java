@@ -15,7 +15,6 @@ public class Repeat {
     }
 
 
-
     public void timerLevelOne(){
 
         Timer timer = new Timer();
@@ -53,7 +52,6 @@ public class Repeat {
 
                 if (stage == play){
                     game.update();
-
                 }
 
                 gameDisplay.repaint();

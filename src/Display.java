@@ -18,7 +18,7 @@ public class Display extends JPanel {
     String win = Start.getWin();
     String gameOver = Start.getGameOver();
 
-    int caseSize = 40;
+    int caseSize = 25;
 
     int l = 400;
     int L= 400;
@@ -37,7 +37,6 @@ public class Display extends JPanel {
 
 
         stage = Start.getStage();
-
 
         if (stage == play){
             drawGame(g);
@@ -65,17 +64,8 @@ public class Display extends JPanel {
 
     public void drawGame(Graphics g) {
 
-        /***Grille***/
-
-        g.clearRect(0, 0, L, l);
-
-        for (int y=0; y <= l ; y+= caseSize){
-            g.drawLine(0, y, L, y);
-        }
-
-        for (int x=0; x <= L ; x+= caseSize){
-            g.drawLine(x, 0, x, l);
-        }
+        g.setColor(Color.WHITE);
+        g.fillRect(0,0, 400, 400);
 
         /***Snake***/
 
