@@ -14,14 +14,9 @@ public class Repeat {
 
     public void snakeTimer(){
         Timer timer = new Timer();
-//        Game game = new Game();
-//        Display  gameDisplay = new Display(game);
         String stage = Start.getStage();
 
-        String home = Start.getHome();
         String play = Start.getPlay();
-        String win = Start.getWin();
-        String gameOver = Start.getGameOver();
 
         timer.schedule (new TimerTask() {
 
@@ -30,6 +25,7 @@ public class Repeat {
 
                 if (stage == play){
                     game.update();
+
                 }
 
 

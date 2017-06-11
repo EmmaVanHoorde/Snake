@@ -9,7 +9,6 @@ public class Snake {
 
     LinkedList<Case> caseList;
 
-
     Coordinates left = new Coordinates(-1, 0);
     Coordinates right = new Coordinates(1, 0);
     Coordinates top = new Coordinates(0, -1);
@@ -19,7 +18,7 @@ public class Snake {
     Coordinates thisDirection;
 
     boolean grow = false;
-    int X, Y;
+
 
     public Snake(){
 
@@ -92,10 +91,11 @@ public class Snake {
         Case newCase = new Case(firstCase.x + direction.getX(), firstCase.y + direction.getY());
 
 
-        if (firstX >= 12 || firstY < 0 || firstX < 0 || firstY >= 12) {
+        if (firstX >= 10 || firstY < 0 || firstX < 0 || firstY >= 10) {
             Start.setStage(gameOver);
             return;
         }
+
 
         if (meet(newCase)) {
             Start.setStage(Start.gameOver);

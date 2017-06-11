@@ -21,7 +21,7 @@ public class Display extends JPanel {
     int caseSize = 40;
 
     int l = 400;
-    int L= 500;
+    int L= 400;
 
     Display(Game game){
         this.snake = game.getSnake();

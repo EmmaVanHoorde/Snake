@@ -41,6 +41,12 @@ public class Window extends JFrame{
                 start.newGame();
             }
         });
+        buttonLeave.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                System.exit(0);
+            }
+        });
 
     }
 

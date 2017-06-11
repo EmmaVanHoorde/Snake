@@ -10,7 +10,7 @@ public class Start {
     static String home = "home";
     static String play = "play";
     static String win = "win";
-    static String gameOver = "start over";
+    static String gameOver = "game over";
 
     public static String stage = home;
 
@@ -20,9 +20,8 @@ public class Start {
 
     public static JFrame createWindow() {
         window = new JFrame();
-        window.setSize(450, 400);
+        window.setSize(420, 440);
         window.setLocationRelativeTo(null);
-
         display = new Display(game);
 
         display.setFocusable(true);
@@ -31,7 +30,7 @@ public class Start {
         window.add(display);
 
         display.addKeyListener(new Keyboard(snake));
-        setStage(home);
+        setStage(play);
 
         window.setVisible(true);
 
@@ -44,7 +43,7 @@ public class Start {
         game = new Game();
         snake = new Snake();
         Food food = new Food();
-
+        setStage(play);
         game.addSnake(snake);
         game.addfood(food);
 
@@ -52,15 +51,14 @@ public class Start {
 
         game.addScore(score);
 
-        //stage = home;
     }
 
     public static void newGame() {
-
-
+        
         Repeat time = new Repeat(game, display);
 
         stage = play;
+        setStage(play);
         game.newGame();
         time.snakeTimer();
     }
@@ -77,7 +75,6 @@ public class Start {
     public static String getWin(){
         return win;
     }
-
 
     public static String getStage() {
         return stage;
